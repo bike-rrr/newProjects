@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, 
+    maximum-scale=1.0, user-scalable=no" />
+    <title>bike feed</title>
+    <!-- <link rel="stylesheet" href="https://ez-css.now.sh"> -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            color: blanchedalmond;
+            /* box-sizing: border-box; */
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        /* html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        } */
+
+        body {
+            width: 65%;
+            background-color: black;
+            margin: auto auto;
+
+        }
+
+        a {
+            font-size: 30px;
+            color: blanchedalmond;
+            text-decoration: none;
+            padding-top: 5px;
+        }
+
+        img {
+            clear: both;
+            cursor: pointer;
+            padding-right: 10px;
+            padding-top: 10px;
+            width: 220px;
+
+        }
+
+        div {
+            /* padding: 20; */
+            margin: 10;
+            display: flex;
+            justify-content: flex-start;
+            padding-bottom: 10px;
+            /* new to keep image height same*/
+            height: 170px;
+            /* word break makes it centered on narrow window, but work break is fucked to read ..... no word-break is the way to go :)*/
+            /* word-break: break-all; */
+        }
+
+        #articles {
+            display: grid;
+            grid-template-columns: 1;
+        }
+
+        .headline {
+            text-align: center;
+            padding-bottom: 30px;
+            color: white;
+            padding-top: 10px;
+        }
+
+        hr {
+            position: relative;
+            width: 100%;
+            border: 1px solid;
+        }
+
+        .sectionContent {
+            width: 100%;
+            font-size: 35px;
+            display: flex;
+            justify-content: space-between;
+            /* overflow hidden on parent dive didnt work.... doing it here did :)*/
+            overflow: hidden;
+        }
+
+        .sectionContent p {
+            color: white;
+            padding-left: 5px;
+            padding-top: 10px;
+        }
+
+        @media only screen and (max-width: 425px) {
+            body {
+                width: 95vw;
+            }
+
+            div {
+                height: 10vh;
+            }
+
+            #articles {
+                width: 95vw;
+            }
+
+            img {
+                /* height: 100%; */
+                width: 121px;
+            }
+
+            a {
+                font-size: 15px;
+
+            }
+
+            .sectionContent p {
+                font-size: 15px;
+            }
+
+            .vital_img {
+                /* height: 65px; */
+                position: relative;
+                height: 78%;
+            }
+
+
+        }
+
+        .loader {
+            margin: auto auto;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid blue;
+            border-right: 16px solid black;
+            border-bottom: 16px solid purple;
+            border-left: 16px solid black;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(720deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(720deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="headline">KEITHS MTB PICKS</h1>
+
+    <div class="loader">
+    </div>
+
+    <div id="articles">
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
